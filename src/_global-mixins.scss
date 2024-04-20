@@ -1,0 +1,120 @@
+@import "./global-variables";
+
+@mixin respond-to($media) {
+  @if $media==largeScreen {
+    @media only screen and (min-width: $largeScreen) {
+      @content;
+    }
+  }
+
+  @else if $media==smallScreen {
+    @media only screen and (min-width: $smallScreen) and (max-width: ($largeScreen - 1)) {
+      @content;
+    }
+  }
+
+  @else if $media==ipad {
+    @media only screen and (min-width: $ipad) and (max-width: ($smallScreen - 1)) {
+      @content;
+    }
+  }
+
+  @else if $media==largeMobile {
+    @media only screen and (min-width: ($mobile + 1)) and (max-width: ($ipad - 1)) {
+      @content;
+    }
+  }
+
+  @else if $media==mobile {
+    @media only screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+
+  @else if $media==landscapeMobile {
+    @media only screen and (max-width: ($smallScreen - 1)) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $media==landscapeMobileSmall {
+    @media only screen and (max-width: ($mobile - 1)) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to-end($media) {
+  @if $media==largeScreen {
+    @media screen and (max-width: $largeScreen) {
+      @content;
+    }
+  }
+
+  @else if $media==smallScreen {
+    @media screen and (max-width: $smallScreen) {
+      @content;
+    }
+  }
+
+  @else if $media==smallMobile {
+    @media screen and (max-width: $smallMobile) {
+      @content;
+    }
+  }
+
+  @else if $media==ipad {
+    @media screen and (max-width: $ipad) {
+      @content;
+    }
+  }
+
+  @else if $media==largeMobile {
+    @media screen and (max-width: ($ipad - 1)) {
+      @content;
+    }
+  }
+
+  @else if $media==mobile {
+    @media screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+}
+
+@mixin box-shadow($left, $top, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $left $top $blur $color;
+    -moz-box-shadow: inset $left $top $blur $color;
+    box-shadow: inset $left $top $blur $color;
+  }
+
+  @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin transition($property, $duration, $ease) {
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -o-transition: $property $duration $ease;
+  transition: $property $duration $ease;
+}
+
+@mixin grab-cursor {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab !important;
+}
+
+@mixin grabbing-cursor {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing !important;
+}

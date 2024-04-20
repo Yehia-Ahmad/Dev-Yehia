@@ -1,0 +1,12 @@
+@import "../global-variables";
+@import "../global-mixins";
+
+.app {
+  width: 85%;
+  margin: 0 auto;
+  height: 100vh;
+
+  @include respond-to(mobile) {
+    width: 100%;
+  }
+}
