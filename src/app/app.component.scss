@@ -2,9 +2,16 @@
 @import "../global-mixins";
 
 .app {
-  width: 85%;
-  margin: 0 auto;
+  width: 100%;
   height: 100vh;
+  margin: 0;
+  padding: 0 $container-padding;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 $container-padding;
 
   @include respond-to(mobile) {
     width: 100%;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DarkModeService } from './services/dark-mode.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,19 @@ export class AppComponent implements OnInit {
   isChrome: boolean = true;
   classes: any;
 
-  constructor() { }
+  constructor(private darkModeService: DarkModeService) { }
 
   ngOnInit() {
+    this.isDarkMode = this.darkModeService.getItem('isDarkMode');
+    this.darkModeService.isDarkMode.next(this.isDarkMode);
     this.isChrome = navigator.userAgent.includes("Chrome");
-    this.classes = {
-      'dark-mode': this.isDarkMode,
-      'light-mode': !this.isDarkMode,
-      'mozilla-style': !this.isChrome
-    };
+    this.darkModeService.isDarkMode.subscribe((res: boolean) => {
+      this.isDarkMode = res;
+      this.classes = {
+        'dark-mode': this.isDarkMode,
+        'light-mode': !this.isDarkMode,
+        'mozilla-style': !this.isChrome
+      };
+    });
   }
 }
