@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   isDarkMode: boolean = true;
   isChrome: boolean = true;
   classes: any;
+  classesSecondary: any;
 
   constructor(private darkModeService: DarkModeService) { }
 
@@ -24,6 +25,10 @@ export class AppComponent implements OnInit {
         'dark-mode': this.isDarkMode,
         'light-mode': !this.isDarkMode,
         'mozilla-style': !this.isChrome
+      };
+      this.classesSecondary = {
+        'dark-mode-secondary': this.isDarkMode,
+        'light-mode-secondary': !this.isDarkMode,
       };
     });
   }
