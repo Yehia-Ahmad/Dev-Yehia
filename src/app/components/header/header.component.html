@@ -15,7 +15,7 @@
 
   <button class="toggle-button-mode" [ngClass]="classesSubtitle" (click)="toogleMode()">
     <mat-icon class="icon-moon-o" svgIcon="moon" *ngIf="isDarkMode"></mat-icon>
-    <mat-icon class="icon-sun" svgIcon="sun" *ngIf="!isDarkMode"></mat-icon>
+    <mat-icon svgIcon="sun" *ngIf="!isDarkMode" class="icon-sun"></mat-icon>
   </button>
 </header>
 

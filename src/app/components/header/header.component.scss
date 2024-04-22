@@ -103,9 +103,6 @@ header .toggle-button-mode {
   box-shadow: 1px 1px 40px rgba(35, 35, 36, 0.165);
 }
 
-header .icon-sun {
-  color: rgb(255, 165, 0);
-}
 
 header .icon-menu:hover,
 header .toggle-button-mode:hover {
@@ -218,5 +215,12 @@ header .toggle-button-mode:hover {
 
   100% {
     scale: 1;
+  }
+}
+
+.toggle-button-mode {
+
+  &>.icon-sun {
+    fill: rgb(255, 165, 0) !important;
   }
 }
