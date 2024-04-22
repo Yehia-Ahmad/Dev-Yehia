@@ -1,0 +1,147 @@
+@import "../../../global-variables";
+@import "../../../global-mixins";
+
+.flex {
+  display: flex;
+}
+
+main {
+  padding: 0 $container-padding;
+  padding-top: 5rem;
+  gap: 2.64rem;
+  align-items: start;
+  border-bottom: 1px solid rgba(203, 200, 200, 0.586);
+  padding-bottom: 2.5rem;
+}
+
+.left-section {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.active {
+  opacity: 1 !important;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  padding: 0.8rem 0 !important;
+  border: 1px solid $dark-blue !important;
+  color: $dark-title !important;
+  background-color: $dark-secondary !important;
+}
+
+main section.left-section.flex button {
+  background-color: rgba(36, 37, 46, 1);
+  width: 11rem;
+  padding: 0.75rem 0;
+  text-align: center;
+  font-size: 1.05rem;
+  text-transform: capitalize;
+  opacity: 0.5;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: $dark-subtitle;
+  border: none;
+
+  &:hover {
+    opacity: 1;
+    color: $dark-title;
+  }
+}
+
+main section.right-section.flex {
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 2rem;
+}
+
+.card {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.16), 1px 1px 1px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(93, 188, 252, 0.3);
+  border-radius: 5px;
+  transition: 0.5s;
+  width: 260px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+
+  &:hover {
+    rotate: 2deg;
+    transform: scale(1.01);
+  }
+
+  &>img {
+    border-radius: 5px;
+    width: 258px;
+    cursor: pointer;
+  }
+
+  &>.box {
+    width: 260px;
+    padding: 1rem 0.4rem;
+
+    &>.title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+
+    &>.sub-title {
+      font-size: 0.8rem;
+      margin-top: 0.7rem;
+      margin-bottom: 1.1rem;
+      cursor: pointer;
+    }
+
+    &>.icons {
+      justify-content: space-between;
+      margin-top: 1px;
+      padding: 0 1rem;
+
+      &>.icon {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.dark-mode-blue {
+  color: $dark-blue;
+}
+
+.dark-mode-title {
+  color: $dark-title;
+}
+
+.dark-mode-subtitle {
+  color: $dark-subtitle;
+}
+
+.dark-mode-icons {
+  color: $dark-subtitle;
+
+  &:hover {
+    color: $dark-title;
+  }
+}
+
+.light-mode-icons {
+  color: $light-subtitle;
+
+  &:hover {
+    color: $light-title;
+  }
+}
+
+.light-mode-blue {
+  color: $light-blue;
+}
+
+.light-mode-title {
+  color: $light-title;
+}
+
+.light-mode-subtitle {
+  color: $light-subtitle;
+}
