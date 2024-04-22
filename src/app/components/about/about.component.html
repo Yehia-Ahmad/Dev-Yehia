@@ -1,1 +1,30 @@
-<p>about works!</p>
+<section id="about">
+  <div class="left-section">
+    <div class="parent-avatar flex">
+      <img src="../../assets/icons/me.png" class="avatar" alt="" />
+      <mat-icon svgIcon="verified" [ngClass]="classesBlue" class="icon-verified"></mat-icon>
+    </div>
+    <h1 [ngClass]="classesTitle" class="title">
+      Software engineer, Angular Developer and React Developer.
+    </h1>
+    <p [ngClass]="classesSubtitle" class="sub-title">
+      I’m Yehia Ahmed, a software engineer based in Cairo City. I'm a passionate front-end developer with a creative
+      edge and
+      a love for crafting seamless, user-centric experiences on the web. I thrive on turning ideas into interactive,
+      responsive, and visually appealing websites. Proficient in popular frontend frameworks like React and Angular.js,
+      I
+      enjoy tackling complex problems and finding elegant solutions.
+    </p>
+
+    <div [ngClass]="classesSubtitle" class="all-icons flex">
+      <mat-icon svgIcon="twitter" class="icon icon-twitter" [ngClass]="classesIcons"
+        (click)="goToLink('twitter')"></mat-icon>
+      <mat-icon svgIcon="facebook" class="icon icon-facebook" [ngClass]="classesIcons"
+        (click)="goToLink('facebook')"></mat-icon>
+      <mat-icon svgIcon="github" class="icon icon-github" [ngClass]="classesIcons"
+        (click)="goToLink('github')"></mat-icon>
+      <mat-icon svgIcon="linkedin" class="icon icon-linkedin" [ngClass]="classesIcons"
+        (click)="goToLink('linkedin')"></mat-icon>
+    </div>
+  </div>
+</section>

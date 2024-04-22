@@ -1,0 +1,111 @@
+@import "../../../global-variables";
+@import "../../../global-mixins";
+
+#about {
+  width: 100%;
+  padding: 0 $container-padding;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(203, 200, 200, 0.586);
+}
+
+.flex {
+  display: flex;
+}
+
+.left-section {
+  flex-grow: 1;
+  width: 61%;
+  margin-top: 5rem;
+}
+
+.avatar {
+  width: 88px;
+  border-radius: 50%;
+  border: 1px solid darkorange;
+  padding: 1px;
+  box-shadow: 2px 2px 40px rgba(203, 200, 200, 0.586) inset;
+}
+
+.parent-avatar {
+  align-items: end;
+  gap: 0.6rem;
+  min-height: 88px;
+}
+
+.dark-mode-verified {
+  color: $dark-blue;
+}
+
+.light-mode-verified {
+  color: $light-blue;
+}
+
+.dark-mode-title {
+  color: $dark-title;
+}
+
+.light-mode-title {
+  color: $light-title;
+}
+
+.icon-verified {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.title {
+  font-size: 2.85rem;
+  line-height: 3.3rem;
+  margin: 24px 0;
+}
+
+.dark-mode-subtitle {
+  color: $dark-subtitle;
+}
+
+.light-mode-subtitle {
+  color: $light-subtitle;
+}
+
+.sub-title {
+  font-size: 0.9rem;
+  line-height: 1.65rem;
+  margin-bottom: 32px;
+}
+
+.all-icons {
+  font-size: 1.3rem;
+  gap: 1.5rem;
+}
+
+.icon {
+  font-family: 'icomoon' !important;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark-mode-icons {
+  color: $dark-subtitle;
+  transition: 0.5s;
+
+  &:hover {
+    color: $dark-title;
+    scale: 1.2;
+  }
+}
+
+.light-mode-icons {
+  color: $light-subtitle;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $light-title;
+    scale: 1.2;
+  }
+}
