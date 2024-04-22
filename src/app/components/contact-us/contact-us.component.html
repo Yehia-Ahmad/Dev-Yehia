@@ -1,1 +1,26 @@
-<p>contact-us works!</p>
+<section id="contact-us">
+  <h1 class="title" [ngClass]="classesTitle">
+    <mat-icon svgIcon="mail" class="icon-envelope" [ngClass]="classesSubtitle"></mat-icon>
+    contact us
+  </h1>
+  <p class="sub-title" [ngClass]="classesSubtitle">Contact us for more information and Get notified when I publish
+    something new.</p>
+  <div class="mail-box flex">
+    <form>
+      <div class="form-control flex" [ngClass]="classesInput">
+        <label for="email">Email Address:</label>
+        <input autocomplete="off" required="" type="email" name="email" id="email">
+      </div>
+      <div class="form-control flex" [ngClass]="classesInput">
+        <label for="email">Your message:</label>
+        <textarea required="" name="message" id="message"></textarea>
+      </div>
+      <button type="submit" class="submit">Submit</button>
+    </form>
+    <div class=" animation">
+      <div class="contact-animation">
+        <mat-icon svgIcon="mail-animation" class="icon-mail"></mat-icon>
+      </div>
+    </div>
+  </div>
+</section>

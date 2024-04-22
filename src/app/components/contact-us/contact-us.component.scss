@@ -1,0 +1,120 @@
+@import "../../../global-variables";
+@import "../../../global-mixins";
+
+#contact-us {
+  padding: 0 $container-padding;
+  padding-top: 5rem;
+  gap: 2.64rem;
+  align-items: start;
+  border-bottom: 1px solid rgba(203, 200, 200, 0.586);
+  padding-bottom: 2.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+
+  &>.icon-envelope {
+    margin-right: 1rem;
+    font-size: 1.8rem;
+  }
+}
+
+.sub-title {
+  margin-bottom: 2rem;
+  line-height: 1.65rem;
+}
+
+.mail-box {
+  justify-content: space-between;
+}
+
+section.contact-us label {
+  color: $dark-subtitle;
+}
+
+#email,
+#message {
+  all: unset;
+  // background-color: rgba(63, 63, 70, 0.15);
+  background-color: rgba(63, 63, 70, 0);
+  border: 1px solid rgb(63 63 70);
+  width: 16rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-size: 1.1rem;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $dark-blue;
+  }
+
+  &:hover {
+    outline: none;
+    border: 1px solid $dark-blue;
+  }
+
+}
+
+#message {
+  height: 147px;
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.form-control {
+  margin-bottom: 2rem;
+}
+
+.submit {
+  cursor: pointer;
+  background-color: rgba(36, 37, 46, 1);
+  padding: 0.75rem 2rem;
+  text-align: center;
+  font-size: 1.05rem;
+  text-transform: capitalize;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 1.8rem;
+  border: 1px solid rgb(63 63 70);
+  color: $dark-title;
+}
+
+.dark-mode-title {
+  color: $dark-title;
+}
+
+.dark-mode-input {
+
+  #email,
+  #message {
+    background-color: rgba(63, 63, 70, 0.15);
+  }
+}
+
+.light-mode-input {
+
+  #email,
+  #message {
+    background-color: rgba(63, 63, 70, 0);
+  }
+}
+
+.light-mode-title {
+  color: $light-title;
+}
+
+.dark-mode-subtitle {
+  color: $dark-subtitle;
+}
+
+.light-mode-subtitle {
+  color: $light-subtitle;
+}
