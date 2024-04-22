@@ -59,13 +59,13 @@ export class HeaderComponent {
     });
   }
 
-  toogleMode() {
+  toggleMode() {
     this.darkModeService.isDarkMode.next(!this.isDarkMode);
     this.isDarkMode = this.darkModeService.isDarkMode.value;
     this.darkModeService.setItem('isDarkMode', this.isDarkMode);
   }
 
-  toogleListMenu() {
+  toggleListMenu() {
     this.hideListMenu = !this.hideListMenu;
   }
 
