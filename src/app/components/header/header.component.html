@@ -1,1 +1,32 @@
-<p>header works!</p>
+<header class="container flex-row">
+  <div class="dimmed-container">
+    <button class="menu icon-menu flex" [ngClass]="classesSubtitle">
+      <mat-icon svgIcon="menu" (click)="toogleListMenu()"></mat-icon>
+    </button>
+  </div>
+
+  <nav class="flex-row">
+    <ul class="navigation-links flex-row" [ngClass]="classes">
+      <li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#projects">Projects</a></li>
+      <li><a class="nav-link" href="#contact-us">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <button class="toggle-button-mode" [ngClass]="classesSubtitle" (click)="toogleMode()">
+    <mat-icon class="icon-moon-o" svgIcon="moon" *ngIf="isDarkMode"></mat-icon>
+    <mat-icon class="icon-sun" svgIcon="sun" *ngIf="!isDarkMode"></mat-icon>
+  </button>
+</header>
+
+<div class="menu-container" [ngClass]="{'hidden': hideListMenu}">
+  <div class="overley" (click)="toogleListMenu()"></div>
+  <div [ngClass]="classesSecndary" class="dialog-container">
+    <mat-icon svgIcon="close" class="icon-close" (click)="toogleListMenu()"></mat-icon>
+    <ul class="menu-dialog navigation-list-links" [ngClass]="classesSecndary">
+      <li [ngClass]="classesBorder"><a [ngClass]="classes" class="nav-link" href="#about">About</a></li>
+      <li [ngClass]="classesBorder"><a class="nav-link" href="#projects" [ngClass]="classes">Projects</a></li>
+      <li [ngClass]="classesBorder"><a class="nav-link" href="#contact-us" [ngClass]="classes">Contact Us</a></li>
+    </ul>
+  </div>
+</div>

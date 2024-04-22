@@ -1,0 +1,222 @@
+@import "../../../global-variables";
+@import "../../../global-mixins";
+
+.dark-mode {
+  background-color: $dark-bgHeader;
+
+  &>li {
+    &>a {
+      color: $dark-title;
+
+      &:hover {
+        color: $dark-blue;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+.light-mode {
+  background-color: $light-bgHeader;
+
+  &>li {
+    &>a {
+      color: $light-title;
+
+      &:hover {
+        color: $light-blue;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+.container {
+  padding: 0 2.4rem;
+  margin-top: 1.2rem;
+}
+
+.navigation-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+  padding: 0.77rem 1.6rem;
+  border-radius: 55px;
+  @include box-shadow(1px, 1px, 40px, #2323242a, false);
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+/* ========================
+    2. Button & icon
+=========================== */
+
+.dark-mode-subtitle {
+  background-color: $dark-bgHeader;
+
+  .mat-icon {
+    fill: $dark-subtitle;
+
+    &:hover {
+      cursor: pointer;
+      fill: $dark-title;
+      transition: 0.2ms;
+    }
+  }
+}
+
+.light-mode-subtitle {
+  background-color: $light-bgHeader;
+
+  .mat-icon {
+    fill: $light-subtitle;
+
+    &:hover {
+      cursor: pointer;
+      fill: $light-title;
+    }
+  }
+}
+
+.dimmed-container {
+  @include respond-to-end(mobile) {
+    &>button {
+      display: none;
+    }
+  }
+}
+
+header .icon-menu,
+header .toggle-button-mode {
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(244, 165, 96, 0.249);
+  transition: 0.2s;
+  box-shadow: 1px 1px 40px rgba(35, 35, 36, 0.165);
+}
+
+header .icon-sun {
+  color: rgb(255, 165, 0);
+}
+
+header .icon-menu:hover,
+header .toggle-button-mode:hover {
+  border: 1px solid rgb(244, 165, 96);
+}
+
+.icon-close {
+  right: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.5rem;
+
+  &:hover {
+    font-size: 1.7rem;
+    color: crimson;
+    rotate: 180deg;
+  }
+}
+
+
+.menu {
+  display: none;
+}
+
+.dark-mode-secondary {
+  background-color: $dark-secondary;
+}
+
+.light-mode-secondary {
+  background-color: $light-secondary;
+}
+
+.dark-mode-border {
+  border-bottom: 1px solid $dark-border;
+}
+
+.light-mode-border {
+  border-bottom: 1px solid $light-border;
+}
+
+.menu-container {
+  .dialog-container {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    z-index: 12;
+    animation: mymove 0.77s 1;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+
+    .menu-dialog {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      gap: 16px;
+      padding: 0.77rem 1.6rem;
+
+      &>li {
+        padding-bottom: 0.77rem;
+        padding-top: 0.5rem;
+
+        &>a {
+          background-color: unset;
+          border: unset;
+          opacity: 0.9;
+          font-size: 0.88rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .overley {
+    position: fixed;
+    cursor: pointer;
+    inset: 0;
+    z-index: 11;
+    background-color: rgba(40, 40, 48, 0.91);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@include respond-to-end(smallScreen) {
+  .navigation-links {
+    display: none;
+  }
+
+  .menu {
+    display: contents;
+  }
+}
+
+@keyframes mymove {
+  0% {
+    scale: 0;
+  }
+
+  60% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
