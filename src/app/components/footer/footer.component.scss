@@ -1,0 +1,54 @@
+@import "../../../global-variables";
+@import "../../../global-mixins";
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  padding: 0 $container-padding;
+  padding-top: 2rem;
+  gap: 2.64rem;
+  align-items: start;
+  padding-bottom: 2.5rem;
+}
+
+footer.flex {
+  justify-content: space-between;
+  padding-bottom: 1.9rem;
+}
+
+
+footer.flex ul {
+  gap: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+footer.flex ul a {
+  color: $dark-subtitle;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark-blue;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 800px) {
+
+  footer.flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+
+
+}
