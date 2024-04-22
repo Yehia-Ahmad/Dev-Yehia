@@ -145,3 +145,24 @@ main section.right-section.flex {
 .light-mode-subtitle {
   color: $light-subtitle;
 }
+
+@media (max-width: 790px) {
+  .flex {
+    flex-direction: column;
+    gap: 2.64rem;
+    align-items: center;
+  }
+
+  main section.left-section.flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  main section.left-section.flex button {
+    width: 7rem;
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+}

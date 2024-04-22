@@ -224,3 +224,13 @@ header .toggle-button-mode:hover {
     fill: rgb(255, 165, 0) !important;
   }
 }
+
+@media (width < 700px) {
+  header.flex nav {
+    display: none;
+  }
+
+  header button.menu {
+    display: block;
+  }
+}
