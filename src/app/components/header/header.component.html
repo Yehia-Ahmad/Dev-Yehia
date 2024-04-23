@@ -17,6 +17,9 @@
     <mat-icon class="icon-moon-o" svgIcon="moon" *ngIf="isDarkMode"></mat-icon>
     <mat-icon svgIcon="sun" *ngIf="!isDarkMode" class="icon-sun"></mat-icon>
   </button>
+  <!-- <button class="toggle-button-mode" [ngClass]="classesSubtitle" (click)="toggleMode()">
+    <mat-icon class="icon-download" svgIcon="download"></mat-icon>
+  </button> -->
 </header>
 
 <div class="menu-container" [ngClass]="{'hidden': hideListMenu}">
@@ -24,9 +27,12 @@
   <div [ngClass]="classesSecndary" class="dialog-container">
     <mat-icon svgIcon="close" class="icon-close" (click)="toggleListMenu()"></mat-icon>
     <ul class="menu-dialog navigation-list-links" [ngClass]="classesSecndary">
-      <li [ngClass]="classesBorder"><a [ngClass]="classes" class="nav-link" href="#about">About</a></li>
-      <li [ngClass]="classesBorder"><a class="nav-link" href="#projects" [ngClass]="classes">Projects</a></li>
-      <li [ngClass]="classesBorder"><a class="nav-link" href="#contact-us" [ngClass]="classes">Contact Us</a></li>
+      <li [ngClass]="classesBorder"><a [ngClass]="classes" class="nav-link" href="#about"
+          (click)="toggleListMenu()">About</a></li>
+      <li [ngClass]="classesBorder"><a class="nav-link" href="#projects" [ngClass]="classes"
+          (click)="toggleListMenu()">Projects</a></li>
+      <li [ngClass]="classesBorder"><a class="nav-link" href="#contact-us" [ngClass]="classes"
+          (click)="toggleListMenu()">Contact Us</a></li>
     </ul>
   </div>
 </div>

@@ -51,7 +51,7 @@ main section.left-section.flex button {
 
 main section.right-section.flex {
   flex-grow: 1;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 2rem;
@@ -73,6 +73,7 @@ main section.right-section.flex {
   &>img {
     border-radius: 5px;
     width: 258px;
+    height: 150px;
     cursor: pointer;
   }
 
@@ -99,7 +100,8 @@ main section.right-section.flex {
       margin-top: 1px;
       padding: 0 1rem;
 
-      &>.icon {
+      &>.icon,
+      .link {
         cursor: pointer;
       }
     }

@@ -33,6 +33,10 @@ export class HeaderComponent {
       'close',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/close.svg')
     );
+    this.matIconRegistry.addSvgIcon(
+      'download',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/download.svg')
+    );
   }
 
   ngOnInit() {
