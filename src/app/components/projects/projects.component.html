@@ -2,7 +2,7 @@
   <section class="flex left-section">
     <button [ngClass]="{'active': all}" (click)="toggleActiveButton('all')">all projects</button>
     <button [ngClass]="{'active': js}" (click)="toggleActiveButton('js')">javaScript</button>
-    <button [ngClass]="{'active': an}" (click)="toggleActiveButton('an')">angular</button>
+    <button [ngClass]="{'active': ng}" (click)="toggleActiveButton('ng')">angular</button>
     <button [ngClass]="{'active': re}" (click)="toggleActiveButton('re')">react</button>
   </section>
   <section class="flex right-section">
@@ -13,8 +13,7 @@
           {{project.projectTitle}}
         </h1>
         <p class="sub-title" [ngClass]="classesSubtitle" (click)="openProject(project)">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ratione deserunt.
-          Voluptatem architecto eligendi consectetur, assumenda accusamus dolor animi, repellendus
+          {{project.projectDesc}}
         </p>
         <div class="flex icons">
           <mat-icon svgIcon="github" class="icon icon-github" [ngClass]="classesIcons"

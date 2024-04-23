@@ -12,14 +12,14 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
 export class ProjectsComponent implements OnInit {
   all: boolean = true;
   js: boolean = false;
-  an: boolean = false;
+  ng: boolean = false;
   re: boolean = false;
   classesBlue: any;
   classesTitle: any;
   classesSubtitle: any;
   classesIcons: any;
   isDarkMode: any;
-  allProjects = myProjects;
+  allProjects: any = myProjects;
 
   constructor(private darkModeService: DarkModeService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
@@ -50,28 +50,32 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  toggleActiveButton(button: string) {
-    switch (button) {
+  toggleActiveButton(projectType: string) {
+    switch (projectType) {
       case 'all':
-        this.all = true; this.js = false; this.an = false; this.re = false;
+        this.all = true; this.js = false; this.ng = false; this.re = false;
+        this.allProjects = myProjects;
         break;
       case 'js':
         this.all = false;
         this.js = true;
-        this.an = false;
+        this.ng = false;
         this.re = false;
+        this.allProjects = myProjects.filter((project: any) => project.category[0] === 'js');
         break;
-      case 'an':
+      case 'ng':
         this.all = false;
         this.js = false;
-        this.an = true;
+        this.ng = true;
         this.re = false;
+        this.allProjects = myProjects.filter((project: any) => project.category[0] === 'ng');
         break;
       case 're':
         this.all = false;
         this.js = false;
-        this.an = false;
+        this.ng = false;
         this.re = true;
+        this.allProjects = myProjects.filter((project: any) => project.category[0] === 'react');
         break;
     }
   }
