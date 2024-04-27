@@ -23,7 +23,7 @@
         <label for="email">Your message:</label>
         <textarea formControlName="message" required="true" name="message" id="message"></textarea>
       </div>
-      <button type="submit" class="submit">Submit</button>
+      <button type="submit" class="submit" [disabled]="!form.valid">Submit</button>
       <div class="animation-container" *ngIf="emailStatus">
         <div [id]="doneRootId"></div>
         <p [ngClass]="classesTitle">

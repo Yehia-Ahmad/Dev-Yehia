@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import ContactAnimationComponent from './contact';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import DoneAnimationComponent from './done';
 import badRequestAnimationComponent from './badRequest';
 
@@ -28,11 +28,11 @@ export default class ContactUsComponent implements OnInit, AfterViewInit, OnChan
   emailStatus: boolean = false;
   badRequest: boolean = false;
   form: FormGroup = this.fb.group({
-    from_name: '',
+    from_name: ['', Validators.required],
     to_name: 'Yehia',
-    from_email: '',
-    subject: '',
-    message: ''
+    from_email: ['', Validators.required],
+    subject: ['', Validators.required],
+    message: ['', Validators.required],
   });
 
   constructor(private fb: FormBuilder, private darkModeService: DarkModeService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
@@ -91,6 +91,7 @@ export default class ContactUsComponent implements OnInit, AfterViewInit, OnChan
     if (emailTemplate.status == 200) {
       this.emailStatus = true;
       this.badRequest = false;
+      this.render();
     } else {
       this.badRequest = true;
       this.emailStatus = false;
