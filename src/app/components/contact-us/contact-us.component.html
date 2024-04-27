@@ -6,20 +6,39 @@
   <p class="sub-title" [ngClass]="classesSubtitle">Contact us for more information and Get notified when I publish
     something new.</p>
   <div class="mail-box flex">
-    <form>
+    <form [formGroup]="form" (submit)="submitForm()">
+      <div class="form-control flex" [ngClass]="classesInput">
+        <label for="name">Full Name:</label>
+        <input formControlName="from_name" autocomplete="off" required="true" type="name" name="name" id="name">
+      </div>
       <div class="form-control flex" [ngClass]="classesInput">
         <label for="email">Email Address:</label>
-        <input autocomplete="off" required="" type="email" name="email" id="email">
+        <input formControlName="from_email" autocomplete="off" required="true" type="email" name="email" id="email">
+      </div>
+      <div class="form-control flex" [ngClass]="classesInput">
+        <label for="subject">Subject:</label>
+        <input formControlName="subject" autocomplete="off" required="true" type="subject" name="subject" id="subject">
       </div>
       <div class="form-control flex" [ngClass]="classesInput">
         <label for="email">Your message:</label>
-        <textarea required="" name="message" id="message"></textarea>
+        <textarea formControlName="message" required="true" name="message" id="message"></textarea>
       </div>
       <button type="submit" class="submit">Submit</button>
+      <div class="animation-container" *ngIf="emailStatus">
+        <div [id]="doneRootId"></div>
+        <p [ngClass]="classesTitle">
+          Your message has been sent successfully 👌.
+        </p>
+      </div>
+      <div class="animation-container" *ngIf="badRequest">
+        <div [id]="badRequestRootId"></div>
+        <p [ngClass]="classesTitle">
+          Oops! Your message has not been sent Please Try again 🙈.
+        </p>
+      </div>
     </form>
-    <div class=" animation">
-      <div class="contact-animation">
-        <mat-icon svgIcon="mail-animation" class="icon-mail"></mat-icon>
+    <div class="animation">
+      <div class="contact-animation" [id]="contactRootId">
       </div>
     </div>
   </div>

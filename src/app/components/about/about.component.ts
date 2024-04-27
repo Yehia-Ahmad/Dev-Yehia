@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import DevAnimationComponent from './dev';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, AfterViewInit, OnChanges {
   classesBlue: any;
   classesIcons: any;
   classesTitle: any;
   classesSubtitle: any;
   isDarkMode: any;
+  public rootId = 'rootId';
 
   constructor(private darkModeService: DarkModeService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
@@ -58,6 +62,18 @@ export class AboutComponent implements OnInit {
         'light-mode-icons': !this.isDarkMode,
       };
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.render();
+  }
+
+  ngAfterViewInit() {
+    this.render();
+  }
+
+  private render() {
+    ReactDOM.render(React.createElement(DevAnimationComponent), document.getElementById(this.rootId));
   }
 
   goToLink(platForm: string): void {

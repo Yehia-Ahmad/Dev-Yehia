@@ -39,9 +39,10 @@ section.contact-us label {
 }
 
 #email,
+#name,
+#subject,
 #message {
   all: unset;
-  // background-color: rgba(63, 63, 70, 0.15);
   background-color: rgba(63, 63, 70, 0);
   border: 1px solid rgb(63 63 70);
   width: 16rem;
@@ -70,6 +71,10 @@ section.contact-us label {
 }
 
 .form-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -94,6 +99,8 @@ section.contact-us label {
 .dark-mode-input {
 
   #email,
+  #name,
+  #subject,
   #message {
     background-color: rgba(63, 63, 70, 0.15);
   }
@@ -102,6 +109,8 @@ section.contact-us label {
 .light-mode-input {
 
   #email,
+  #name,
+  #subject,
   #message {
     background-color: rgba(63, 63, 70, 0);
   }
@@ -117,6 +126,23 @@ section.contact-us label {
 
 .light-mode-subtitle {
   color: $light-subtitle;
+}
+
+.contact-animation {
+  width: 355px;
+}
+
+#doneRootId,
+#badRequestRootId {
+  height: 35px;
+  width: 35px;
+}
+
+.animation-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 @media (max-width: 1250px) {
@@ -144,6 +170,8 @@ section.contact-us label {
   }
 
   #email,
+  #name,
+  #subject,
   #message {
     width: 100%;
     margin-left: 0;

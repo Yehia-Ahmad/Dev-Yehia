@@ -10,6 +10,7 @@
 
 .flex {
   display: flex;
+  align-items: center;
 }
 
 .left-section {
@@ -110,8 +111,12 @@
   }
 }
 
-@media (max-width: 1250px) {
-  section.hero .animation {
+.right-section {
+  width: 39%;
+}
+
+@media (max-width: 900px) {
+  .right-section {
     display: none;
   }
 }

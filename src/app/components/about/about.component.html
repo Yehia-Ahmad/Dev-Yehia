@@ -1,4 +1,4 @@
-<section id="about">
+<section class="flex" id="about">
   <div class="left-section">
     <div class="parent-avatar flex">
       <img src="../../assets/icons/me.png" class="avatar" alt="" />
@@ -26,5 +26,8 @@
       <mat-icon svgIcon="linkedin" class="icon icon-linkedin" [ngClass]="classesIcons"
         (click)="goToLink('linkedin')"></mat-icon>
     </div>
+  </div>
+
+  <div class="right-section" [id]="rootId">
   </div>
 </section>
