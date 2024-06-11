@@ -32,6 +32,14 @@ export const myProjects = [
     projectDesc: '"Course-Goal" is a React.js project designed to help users set and track their learning goals for various courses. It features a user-friendly interface for adding, editing, and deleting goals, with progress-tracking capabilities. This project demonstrates the effective use of React components and state management for goal management.'
   },
   {
+    projectTitle: "Tic-Tac-Toe",
+    category: ["react"],
+    link: "https://yehia-tic-tac-toe.netlify.app/",
+    githubLink: "https://github.com/Yehia-Ahmad/Tic-Tac-Toe-V2.0",
+    imgPath: "../../assets/images/Tic-Tac-Toe.png",
+    projectDesc: 'Tic-Tac-Toe is a web-based version of the classic Tic-Tac-Toe game. It features a two-player mode with an interactive, responsive UI and real-time game updates. The project utilizes HTML, CSS, JavaScript, React, and Vite.'
+  },
+  {
     projectTitle: "Mapty",
     category: ["js"],
     link: "https://yehia-map-activity.netlify.app/",
