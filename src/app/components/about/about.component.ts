@@ -88,4 +88,14 @@ export class AboutComponent implements OnInit, AfterViewInit, OnChanges {
     }
 
   };
+
+  downloadCV() {
+    const fileUrl = 'https://drive.usercontent.google.com/u/0/uc?id=15VdMYrDq_8Ru9U4lGV8grRkAMiTScH0t&export=download';
+    const a = document.createElement('a');
+    a.href = fileUrl;
+    a.download = 'filename.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 }
